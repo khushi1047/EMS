@@ -1,0 +1,98 @@
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand {
+  text-align: center;
+}
+
+.brand h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.brand p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* NOT CENTER */
+  align-items: flex-start;
+  padding: 60px;
+}
+
+/* FORM BOX */
+.form-box {
+  width: 100%;
+  max-width: 420px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #125aa3;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+  margin-top: 5px;
+}

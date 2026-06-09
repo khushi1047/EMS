@@ -1,0 +1,41 @@
+<div class="register-wrapper">
+
+  <div class="register-card">
+
+    <div class="title">Create Account</div>
+    <div class="subtitle">Register to continue</div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <!-- NAME -->
+      <input type="text" placeholder="Name" formControlName="name">
+
+      @if (registerForm.get('name')?.touched && registerForm.get('name')?.errors?.['required']) {
+        <div class="error">Name is required</div>
+      }
+
+      <!-- EMAIL -->
+      <input type="email" placeholder="Email" formControlName="email">
+
+      @if (registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']) {
+        <div class="error">Email is required</div>
+      }
+
+      @if (registerForm.get('email')?.errors?.['email']) {
+        <div class="error">Invalid email</div>
+      }
+
+      <!-- PASSWORD -->
+      <input type="password" placeholder="Password" formControlName="password">
+
+      @if (registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['minlength']) {
+        <div class="error">Min 6 characters required</div>
+      }
+
+      <button type="submit">Register</button>
+
+    </form>
+
+  </div>
+
+</div>
