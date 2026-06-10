@@ -42,7 +42,11 @@ export class LoginComponent {
     localStorage.setItem('user', JSON.stringify(res.user));
 
     // redirect to dashboard
-    this.router.navigate(['/dashboard']);
+    if (res.user.role === 'admin') {
+  this.router.navigate(['/admin-dashboard']);
+} else {
+  this.router.navigate(['/employee-dashboard']);
+}
   },
   error: (err) => {
     console.log('LOGIN FAILED', err);

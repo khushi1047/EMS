@@ -9,13 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('employees', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+   public function up(): void
+{
+    Schema::create('employees', function (Blueprint $table) {
+        $table->id();
+        $table->string('employee_code');
+        $table->string('name');
+        $table->string('email');
+        $table->string('phone');
+        $table->string('department');
+        $table->string('designation');
+        $table->decimal('salary',10,2);
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.

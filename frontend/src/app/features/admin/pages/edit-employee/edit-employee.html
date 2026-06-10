@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="card">
+
+    <h2>Edit Employee</h2>
+
+    <form
+      [formGroup]="employeeForm"
+      (ngSubmit)="updateEmployee()">
+
+      <input type="text" formControlName="employee_code">
+      <input type="text" formControlName="name">
+      <input type="email" formControlName="email">
+      <input type="text" formControlName="phone">
+      <input type="text" formControlName="department">
+      <input type="text" formControlName="designation">
+      <input type="number" formControlName="salary">
+
+      <button type="submit">
+        Update Employee
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
