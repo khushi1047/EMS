@@ -1,43 +1,97 @@
-<h2>Employees</h2>
+<div class="page-header">
 
-<button routerLink="/add-employee">Add Employee</button>
+  <div>
+    <h2>Employee Management</h2>
+    <p>Manage all employees from one place</p>
+  </div>
 
-<table border="1">
+  <a routerLink="/add-employee" class="add-btn">
+    + Add Employee
+  </a>
 
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Department</th>
-      <th>Designation</th>
-      <th>Salary</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
+</div>
 
-  <tbody>
+<div class="table-card">
 
-    @for (emp of employees; track emp.id) {
+  <div class="toolbar">
+    <input
+      type="text"
+      placeholder="🔍 Search employee..."
+    >
+  </div>
+
+  <table>
+
+    <thead>
       <tr>
+        <th>ID</th>
+        <th>Employee</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      @for (emp of employees; track emp.id) {
+
+      <tr>
+
         <td>{{ emp.id }}</td>
-        <td>{{ emp.employee_code }}</td>
-        <td>{{ emp.name }}</td>
-        <td>{{ emp.email }}</td>
-        <td>{{ emp.phone }}</td>
-        <td>{{ emp.department }}</td>
-        <td>{{ emp.designation }}</td>
-        <td>{{ emp.salary }}</td>
 
         <td>
-          <button (click)="edit(emp.id)">Edit</button>
-          <button (click)="delete(emp.id)">Delete</button>
+          <div class="employee-info">
+
+            <div class="avatar">
+              {{ emp.name[0] }}
+            </div>
+
+            <div>
+              <strong>{{ emp.name }}</strong>
+              <p>{{ emp.employee_code }}</p>
+            </div>
+
+          </div>
         </td>
+
+        <td>{{ emp.email }}</td>
+
+        <td>{{ emp.phone }}</td>
+
+        <td>
+          <span class="badge">
+            {{ emp.department }}
+          </span>
+        </td>
+
+        <td>{{ emp.designation }}</td>
+
+        <td>₹ {{ emp.salary }}</td>
+
+        <td>
+
+          <button class="edit-btn"
+                  (click)="edit(emp.id)">
+            Edit
+          </button>
+
+          <button class="delete-btn"
+                  (click)="delete(emp.id)">
+            Delete
+          </button>
+
+        </td>
+
       </tr>
-    }
 
-  </tbody>
+      }
 
-</table>
+    </tbody>
+
+  </table>
+
+</div>
